@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+  - 'stable'
+cache:
+  directories:
+    - 'node_modules'
+install:
+  - npm install
+services:
+  - mysql
+
+env:
+  global:
+    - NODE_ENV=test
+
+before_script:
+  - mysql -e "CREATE DATABASE nodejs_core_test;"
+  - mysql -e "CREATE USER 'root'@'localhost' IDENTIFIED BY 'root';"
+  - npm run build
+  - npm install -g sequelize-cli
+  - sequelize db:migrate
+script:
+  - npm test
+after_success:
+  - npm run coverage

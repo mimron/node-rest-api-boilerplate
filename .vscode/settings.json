@@ -1,0 +1,14 @@
+{
+	//Using double space as tab
+	"editor.tabSize": 2,
+	//Prettier will use single quote on string
+	"prettier.singleQuote": true,
+	//Prettier will use tabs set up above
+	"prettier.useTabs": true,
+	//Enable flow using flowtype.flow-for-vscode
+	"flow.enabled": false,
+	"javascript.validate.enable": false,
+	//formate on save trigger
+	"editor.formatOnSave": true,
+	"editor.scrollBeyondLastLine": false
+}
