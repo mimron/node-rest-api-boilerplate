@@ -15,8 +15,8 @@ env:
 
 before_script:
   - mysql -u root -e 'CREATE DATABASE nodejs_core_test;'
-  - mysql -u root -e "CREATE USER 'root'@'localhost' IDENTIFIED BY 'root';"
-  - mysql -u root -e "GRANT ALL ON nodejs_core_test.* TO 'root'@'localhost';"
+  - mysql -u root -e "CREATE USER 'travis'@'localhost' IDENTIFIED BY 'travis';"
+  - mysql -u root -e "GRANT ALL ON nodejs_core_test.* TO 'travis'@'localhost';"
   - npm run build
   - npm install -g sequelize-cli
   - sequelize db:migrate
