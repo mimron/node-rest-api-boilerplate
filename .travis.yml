@@ -15,9 +15,9 @@ env:
     - NODE_ENV=test
 
 before_install:
-  - mysql -e 'CREATE DATABASE myapp_test;'
+  - mysql -e 'CREATE DATABASE nodejs_core_test;'
   - mysql -e "CREATE USER 'testuser'@'%';"
-  - mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'testuser'@'%'"
+  - mysql -e "GRANT ALL PRIVILEGES ON nodejs_core_test.* TO 'testuser'@'%'"
   - npm run build
   - npm install -g sequelize-cli
   - sequelize db:migrate
