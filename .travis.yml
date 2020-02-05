@@ -14,8 +14,10 @@ env:
     - NODE_ENV=test
 
 before_script:
-  - mysql -e "CREATE DATABASE nodejs_core_test;"
-  - echo "USE mysql;\nUPDATE user SET password=PASSWORD('password') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
+  - sudo mysql -e "create database nodejs_core_test;"
+  - sudo mysql -e "use mysql; update user set authentication_string=PASSWORD('root') where User='root'; update user set plugin='mysql_native_password';FLUSH PRIVILEGES;"
+  - sudo mysql_upgrade -u root -p root
+  - sudo service mysql restart
   - npm run build
   - npm install -g sequelize-cli
   - sequelize db:migrate
