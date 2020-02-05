@@ -9,14 +9,14 @@ module.exports = {
 	development: {
 		database: 'nodejs_core_development',
 		username: 'root',
-		password: 'root',
+		password: 'secret',
 		host: '127.0.0.1',
 		dialect: 'mysql'
 	},
 
 	test: {
 		database: 'nodejs_core_test',
-		username: 'usertest',
+		username: 'root',
 		password: 'secret',
 		host: '127.0.0.1',
 		dialect: 'mysql'
