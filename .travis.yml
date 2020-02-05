@@ -15,6 +15,7 @@ env:
 
 before_script:
   - mysql -e "CREATE DATABASE nodejs_core_test;"
+  - echo "USE mysql;\nUPDATE user SET password=PASSWORD('password') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
   - npm run build
   - npm install -g sequelize-cli
   - sequelize db:migrate

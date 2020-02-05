@@ -17,7 +17,7 @@ module.exports = {
 	test: {
 		database: 'nodejs_core_test',
 		username: 'root',
-		password: '',
+		password: 'root',
 		host: '127.0.0.1',
 		dialect: 'mysql'
 	},
