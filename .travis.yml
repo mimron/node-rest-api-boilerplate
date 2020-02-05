@@ -16,10 +16,6 @@ env:
 
 before_install:
   - mysql -e 'create database nodejs_core_test;'
-  - mysql -u root -e "create user root identified by 'secret'; grant all on nodejs_core_test.* to root;"
-  - mysql -u root -e "create user root@localhost identified by 'secret'; grant all on nodejs_core_test.* to root@localhost;"
-  - mysql -u root -p'secret' -e 'show databases'
-  - mysql -e 'select VERSION()'
   - npm run build
   - npm install -g sequelize-cli
   - sequelize db:migrate

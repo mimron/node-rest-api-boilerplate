@@ -9,7 +9,7 @@ module.exports = {
 	development: {
 		database: 'nodejs_core_development',
 		username: 'root',
-		password: 'secret',
+		password: '',
 		host: '127.0.0.1',
 		dialect: 'mysql'
 	},
@@ -17,7 +17,7 @@ module.exports = {
 	test: {
 		database: 'nodejs_core_test',
 		username: 'root',
-		password: 'secret',
+		password: '',
 		host: '127.0.0.1',
 		dialect: 'mysql'
 	},
