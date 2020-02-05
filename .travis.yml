@@ -15,7 +15,6 @@ env:
 
 before_script:
   - mysql -e "CREATE DATABASE nodejs_core_test;"
-  - mysql -e "CREATE USER 'root'@'localhost' IDENTIFIED BY 'root';"
   - npm run build
   - npm install -g sequelize-cli
   - sequelize db:migrate
